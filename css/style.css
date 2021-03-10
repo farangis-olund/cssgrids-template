@@ -1,4 +1,107 @@
 body {
-	background: url(../img/12_col.gif) center top repeat-y;
-	background-size: 90%;
+    background: url(../img/12_col.gif) center top repeat-y;
+    background-size: 90%;
+}
+
+.header,
+.main,
+.sidebar,
+.footer,
+.box1,
+.box2,
+.box3,
+.footer1,
+.footer2,
+.footer3,
+.footer4 {
+    border: 1px solid #333;
+    height: 100px;
+}
+
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: content;
+    display: grid;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.boxes {
+    grid-template-columns: [box1] 15% [box2] auto [box3] 15% [end];
+    grid-area: boxes;
+    display: grid;
+    gap: 2%;
+}
+
+.footer {
+    grid-template-columns: repeat(4, 1fr);
+    grid-area: footer;
+    display: grid;
+    gap: 2%;
+    padding: 0.5%;
+}
+
+.container {
+    width: 89%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "header header header header " "boxes boxes boxes boxes" "content content content sidebar " "footer footer footer footer";
+    gap: 2%;
+}
+
+
+/* Breda desktopskärmar */
+
+@media screen and (max-width: 960px) {
+    .boxes {
+        grid-template-columns: [box1] 23% [box2] auto [box3] 23% [end];
+    }
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: "header header header " "boxes boxes boxes" "content content sidebar " "footer footer footer";
+    }
+}
+
+
+/* Tablets såsom Ipad */
+
+@media screen and (max-width: 768px) {
+    .boxes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: "header header " "boxes boxes " "content sidebar " "footer footer";
+    }
+    .footer {
+        grid-template-columns: repeat(2, 1fr);
+        height: 210px;
+    }
+}
+
+
+/* Mobiltelefoner */
+
+@media screen and (max-width: 600px) {
+    .boxes {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: "header " "boxes " "content" " sidebar " "footer";
+    }
+    .footer {
+        grid-template-columns: repeat(1, 1fr);
+        height: 440px;
+    }
 }

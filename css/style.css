@@ -55,6 +55,13 @@ body {
     background-color: #F9D6C0;
 }
 
+.footer1,
+.footer2,
+.footer3,
+.footer4 {
+    background-color: #faa699;
+}
+
 .footer {
     grid-template-columns: repeat(4, 1fr);
     grid-area: footer;
@@ -62,7 +69,6 @@ body {
     gap: 2%;
     padding: 0.5%;
     height: 112px;
-    background-color: #EE8070;
 }
 
 .container {

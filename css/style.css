@@ -1,5 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background: url(../img/12_col.gif) center top repeat-y;
+    /* background: url(../img/12_col.gif) center top repeat-y; */
     background-size: 90%;
 }
 
@@ -14,12 +18,18 @@ body {
 .footer2,
 .footer3,
 .footer4 {
-    border: 1px solid #333;
+    border: 1px solid #EE8070;
     height: 100px;
+    padding: 10px;
 }
 
 .header {
     grid-area: header;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    padding: 30px 10px;
+    background-color: #DD364C;
 }
 
 .main {
@@ -29,6 +39,7 @@ body {
 
 .sidebar {
     grid-area: sidebar;
+    background-color: #f8d147;
 }
 
 .boxes {
@@ -38,12 +49,20 @@ body {
     gap: 2%;
 }
 
+.box1,
+.box2,
+.box3 {
+    background-color: #F9D6C0;
+}
+
 .footer {
     grid-template-columns: repeat(4, 1fr);
     grid-area: footer;
     display: grid;
     gap: 2%;
     padding: 0.5%;
+    height: 112px;
+    background-color: #EE8070;
 }
 
 .container {
